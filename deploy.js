@@ -1,5 +1,6 @@
 var program = require('commander');
 var request = require('request');
+var api_url = 'here goes your API url';
 
 program
   .version('0.0.1')
@@ -36,7 +37,7 @@ function makeCall() {
   .defaults({
     headers: {'Content-Type': 'application/json'}
   })
-  .post('http://api.theuniversim.com:1337/version/deploy')
+  .post(api_url)
   .form(postData)
   .on('response', function(res) {
     console.log('Completed with status code: ' + res.statusCode);
